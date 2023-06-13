@@ -22,6 +22,10 @@
         End If
     End Sub
 
+    Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
+        PnlData.Visible = True
+    End Sub
+
     'When the drag is false the panel is stop
     Private Sub PnlTitle_MouseUp(sender As Object, e As MouseEventArgs) Handles PnlTitle.MouseUp
         drag = False
