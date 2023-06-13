@@ -34,3 +34,19 @@ else
 		@readerAddress,
 		@readerObservations
 	)
+
+-- *** UPDATE ***
+create proc sp_UpdateReader(
+	@readerId varchar(13),
+	@readerName varchar(50),
+	@readerPhone int,
+	@readerAddress varchar(100),
+	@readerObservations varchar(100)
+)
+as
+update Reader set 
+	readerName = @readerName,
+	readerPhone = @readerPhone,
+	readerAddress = @readerAddress,
+	readerObservations = @readerObservations
+where readerId = @readerId
