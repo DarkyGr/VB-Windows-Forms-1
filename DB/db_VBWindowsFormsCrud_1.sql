@@ -50,3 +50,14 @@ update Reader set
 	readerAddress = @readerAddress,
 	readerObservations = @readerObservations
 where readerId = @readerId
+
+-- *** READ ***
+create proc sp_ShowReader
+as
+select
+	readerId as [Reader ID],
+	readerName as [Reader Name],
+	readerPhone as [Reader Phone],
+	readerAddress as [Reader Address],
+	readerObservations as [Reader Observations]
+from Reader
