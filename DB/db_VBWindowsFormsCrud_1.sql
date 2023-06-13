@@ -61,3 +61,14 @@ select
 	readerAddress as [Reader Address],
 	readerObservations as [Reader Observations]
 from Reader
+
+create proc sp_SearchReader
+@Search varchar(50)
+as
+select
+	readerId as [Reader ID],
+	readerName as [Reader Name],
+	readerPhone as [Reader Phone],
+	readerAddress as [Reader Address],
+	readerObservations as [Reader Observations]
+from Reader where readerId + readerName LIKE '%' + @Search + '%'
