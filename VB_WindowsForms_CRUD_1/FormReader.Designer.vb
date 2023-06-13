@@ -46,7 +46,7 @@ Partial Class FormReader
         Me.lblRId = New System.Windows.Forms.Label()
         Me.DGReaders = New System.Windows.Forms.DataGridView()
         Me.PnlSide = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.BtnAdd = New System.Windows.Forms.PictureBox()
         Me.PnlTitle.SuspendLayout()
         Me.PnlSearch.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,7 +54,7 @@ Partial Class FormReader
         Me.PnlData.SuspendLayout()
         CType(Me.DGReaders, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlSide.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BtnAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PnlTitle
@@ -152,6 +152,7 @@ Partial Class FormReader
         Me.PnlData.Name = "PnlData"
         Me.PnlData.Size = New System.Drawing.Size(983, 537)
         Me.PnlData.TabIndex = 2
+        Me.PnlData.Visible = False
         '
         'Button2
         '
@@ -309,22 +310,23 @@ Partial Class FormReader
         '
         'PnlSide
         '
-        Me.PnlSide.Controls.Add(Me.PictureBox2)
+        Me.PnlSide.Controls.Add(Me.BtnAdd)
         Me.PnlSide.Dock = System.Windows.Forms.DockStyle.Right
         Me.PnlSide.Location = New System.Drawing.Point(851, 0)
         Me.PnlSide.Name = "PnlSide"
         Me.PnlSide.Size = New System.Drawing.Size(132, 537)
         Me.PnlSide.TabIndex = 0
         '
-        'PictureBox2
+        'BtnAdd
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(20, 269)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
+        Me.BtnAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAdd.Image = CType(resources.GetObject("BtnAdd.Image"), System.Drawing.Image)
+        Me.BtnAdd.Location = New System.Drawing.Point(20, 269)
+        Me.BtnAdd.Name = "BtnAdd"
+        Me.BtnAdd.Size = New System.Drawing.Size(100, 100)
+        Me.BtnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BtnAdd.TabIndex = 0
+        Me.BtnAdd.TabStop = False
         '
         'FormReader
         '
@@ -348,7 +350,7 @@ Partial Class FormReader
         Me.PnlData.PerformLayout()
         CType(Me.DGReaders, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlSide.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BtnAdd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -361,7 +363,7 @@ Partial Class FormReader
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PnlContent As Panel
     Friend WithEvents PnlSide As Panel
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents BtnAdd As PictureBox
     Friend WithEvents DGReaders As DataGridView
     Friend WithEvents PnlData As Panel
     Friend WithEvents lblRId As Label
