@@ -150,16 +150,17 @@ Partial Class FormReader
         'TxtRObservations
         '
         Me.TxtRObservations.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRObservations.Location = New System.Drawing.Point(245, 313)
+        Me.TxtRObservations.Location = New System.Drawing.Point(245, 369)
+        Me.TxtRObservations.Multiline = True
         Me.TxtRObservations.Name = "TxtRObservations"
-        Me.TxtRObservations.Size = New System.Drawing.Size(606, 26)
+        Me.TxtRObservations.Size = New System.Drawing.Size(606, 92)
         Me.TxtRObservations.TabIndex = 9
         '
         'LblRObservations
         '
         Me.LblRObservations.AutoSize = True
         Me.LblRObservations.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblRObservations.Location = New System.Drawing.Point(79, 316)
+        Me.LblRObservations.Location = New System.Drawing.Point(79, 372)
         Me.LblRObservations.Name = "LblRObservations"
         Me.LblRObservations.Size = New System.Drawing.Size(100, 19)
         Me.LblRObservations.TabIndex = 8
@@ -169,8 +170,9 @@ Partial Class FormReader
         '
         Me.TxtRAddress.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtRAddress.Location = New System.Drawing.Point(245, 247)
+        Me.TxtRAddress.Multiline = True
         Me.TxtRAddress.Name = "TxtRAddress"
-        Me.TxtRAddress.Size = New System.Drawing.Size(606, 26)
+        Me.TxtRAddress.Size = New System.Drawing.Size(606, 92)
         Me.TxtRAddress.TabIndex = 7
         '
         'LblRAddress
