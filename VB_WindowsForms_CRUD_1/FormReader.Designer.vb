@@ -31,6 +31,9 @@ Partial Class FormReader
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PnlContent = New System.Windows.Forms.Panel()
         Me.PnlData = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnSave = New System.Windows.Forms.Button()
         Me.TxtRObservations = New System.Windows.Forms.TextBox()
         Me.LblRObservations = New System.Windows.Forms.Label()
         Me.TxtRAddress = New System.Windows.Forms.TextBox()
@@ -132,6 +135,9 @@ Partial Class FormReader
         '
         'PnlData
         '
+        Me.PnlData.Controls.Add(Me.Button2)
+        Me.PnlData.Controls.Add(Me.Button1)
+        Me.PnlData.Controls.Add(Me.BtnSave)
         Me.PnlData.Controls.Add(Me.TxtRObservations)
         Me.PnlData.Controls.Add(Me.LblRObservations)
         Me.PnlData.Controls.Add(Me.TxtRAddress)
@@ -146,6 +152,51 @@ Partial Class FormReader
         Me.PnlData.Name = "PnlData"
         Me.PnlData.Size = New System.Drawing.Size(983, 537)
         Me.PnlData.TabIndex = 2
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Red
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Cambria", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Button2.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button2.Location = New System.Drawing.Point(608, 494)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(96, 31)
+        Me.Button2.TabIndex = 12
+        Me.Button2.Text = "Cancel"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Cambria", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(450, 494)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(96, 31)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Edit"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'BtnSave
+        '
+        Me.BtnSave.BackColor = System.Drawing.Color.LimeGreen
+        Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSave.FlatAppearance.BorderSize = 0
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSave.Font = New System.Drawing.Font("Cambria", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.Location = New System.Drawing.Point(288, 494)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(96, 31)
+        Me.BtnSave.TabIndex = 10
+        Me.BtnSave.Text = "Save"
+        Me.BtnSave.UseVisualStyleBackColor = False
         '
         'TxtRObservations
         '
@@ -323,4 +374,7 @@ Partial Class FormReader
     Friend WithEvents LblRPhone As Label
     Friend WithEvents TxtRName As TextBox
     Friend WithEvents LblRName As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnSave As Button
+    Friend WithEvents Button2 As Button
 End Class
