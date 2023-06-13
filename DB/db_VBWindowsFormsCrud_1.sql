@@ -72,3 +72,10 @@ select
 	readerAddress as [Reader Address],
 	readerObservations as [Reader Observations]
 from Reader where readerId + readerName LIKE '%' + @Search + '%'
+
+-- *** DELETE ***
+create proc sp_DeleteReader
+	@readerId varchar(13)
+as
+	delete from Reader
+	where readerId = @readerId
