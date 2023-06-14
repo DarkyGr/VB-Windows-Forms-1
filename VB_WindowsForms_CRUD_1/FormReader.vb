@@ -8,6 +8,7 @@ Public Class FormReader
         'MsgBox("The connection is successful", vbOKOnly + vbInformation, "Reader's System")
     End Sub
 
+    'Close Button
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         Close()
     End Sub
@@ -31,6 +32,7 @@ Public Class FormReader
         End If
     End Sub
 
+    'Add Button
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
         PnlData.Visible = True
         BtnSave.Enabled = True
@@ -40,6 +42,7 @@ Public Class FormReader
         TxtRId.Focus()
     End Sub
 
+    'Cancel Button
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
         Clean()
         BtnSave.Enabled = True
@@ -48,6 +51,7 @@ Public Class FormReader
         PnlData.Visible = False
     End Sub
 
+    'Clean Method
     Private Sub Clean()
         TxtRId.Clear()
         TxtRName.Clear()
