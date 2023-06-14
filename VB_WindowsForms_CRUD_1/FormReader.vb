@@ -9,9 +9,10 @@ Public Class FormReader
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        'Close()
+        Close()
     End Sub
 
+    'Variables to the position of the mouse and drag the window
     Dim ex, ey As Integer
     Dim drag As Boolean
 
