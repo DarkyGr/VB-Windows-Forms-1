@@ -5,7 +5,7 @@ Public Class FormReader
     'Load Data to Form
     Private Sub FormReader_Load(sender As Object, e As EventArgs) Handles Me.Load
         OpenConnection()
-        MsgBox("The connection is successful", vbOKOnly + vbInformation, "Reader's System")
+        'MsgBox("The connection is successful", vbOKOnly + vbInformation, "Reader's System")
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
@@ -33,6 +33,10 @@ Public Class FormReader
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
         PnlData.Visible = True
+        BtnSave.Enabled = True
+        BtnEdit.Enabled = False
+        BtnEdit.BackColor = Color.Gray
+        TxtRId.Focus()
     End Sub
 
     'When the drag is false the panel is stop

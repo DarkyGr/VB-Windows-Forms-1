@@ -31,8 +31,8 @@ Partial Class FormReader
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PnlContent = New System.Windows.Forms.Panel()
         Me.PnlData = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnCancel = New System.Windows.Forms.Button()
+        Me.BtnEdit = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.TxtRObservations = New System.Windows.Forms.TextBox()
         Me.LblRObservations = New System.Windows.Forms.Label()
@@ -135,8 +135,8 @@ Partial Class FormReader
         '
         'PnlData
         '
-        Me.PnlData.Controls.Add(Me.Button2)
-        Me.PnlData.Controls.Add(Me.Button1)
+        Me.PnlData.Controls.Add(Me.BtnCancel)
+        Me.PnlData.Controls.Add(Me.BtnEdit)
         Me.PnlData.Controls.Add(Me.BtnSave)
         Me.PnlData.Controls.Add(Me.TxtRObservations)
         Me.PnlData.Controls.Add(Me.LblRObservations)
@@ -154,35 +154,35 @@ Partial Class FormReader
         Me.PnlData.TabIndex = 2
         Me.PnlData.Visible = False
         '
-        'Button2
+        'BtnCancel
         '
-        Me.Button2.BackColor = System.Drawing.Color.Red
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Cambria", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button2.Location = New System.Drawing.Point(608, 494)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(96, 31)
-        Me.Button2.TabIndex = 12
-        Me.Button2.Text = "Cancel"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.BtnCancel.BackColor = System.Drawing.Color.Red
+        Me.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCancel.FlatAppearance.BorderSize = 0
+        Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancel.Font = New System.Drawing.Font("Cambria", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnCancel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnCancel.Location = New System.Drawing.Point(608, 494)
+        Me.BtnCancel.Name = "BtnCancel"
+        Me.BtnCancel.Size = New System.Drawing.Size(96, 31)
+        Me.BtnCancel.TabIndex = 12
+        Me.BtnCancel.Text = "Cancel"
+        Me.BtnCancel.UseVisualStyleBackColor = False
         '
-        'Button1
+        'BtnEdit
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Cambria", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(450, 494)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(96, 31)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Edit"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnEdit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEdit.FlatAppearance.BorderSize = 0
+        Me.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEdit.Font = New System.Drawing.Font("Cambria", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnEdit.ForeColor = System.Drawing.Color.White
+        Me.BtnEdit.Location = New System.Drawing.Point(450, 494)
+        Me.BtnEdit.Name = "BtnEdit"
+        Me.BtnEdit.Size = New System.Drawing.Size(96, 31)
+        Me.BtnEdit.TabIndex = 11
+        Me.BtnEdit.Text = "Edit"
+        Me.BtnEdit.UseVisualStyleBackColor = False
         '
         'BtnSave
         '
@@ -377,7 +377,7 @@ Partial Class FormReader
     Friend WithEvents LblRPhone As Label
     Friend WithEvents TxtRName As TextBox
     Friend WithEvents LblRName As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnEdit As Button
     Friend WithEvents BtnSave As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnCancel As Button
 End Class
