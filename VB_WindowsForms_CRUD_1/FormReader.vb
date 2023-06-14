@@ -1,7 +1,15 @@
-﻿Public Class FormReader
+﻿Imports System.Data.SqlClient
+
+Public Class FormReader
+
+    'Load Data to Form
+    Private Sub FormReader_Load(sender As Object, e As EventArgs) Handles Me.Load
+        OpenConnection()
+        MsgBox("The connection is successful", vbOKOnly + vbInformation, "Reader's System")
+    End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-
+        'Close()
     End Sub
 
     Dim ex, ey As Integer
@@ -11,7 +19,7 @@
     Private Sub PnlTitle_MouseDown(sender As Object, e As MouseEventArgs) Handles PnlTitle.MouseDown
         ex = e.X
         ey = e.Y
-        Drag = True
+        drag = True
     End Sub
 
     'Calculate the position for the panel
