@@ -41,15 +41,20 @@ Public Class FormReader
     End Sub
 
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
-        TxtRId.Text = ""
-        TxtRName.Text = ""
-        TxtRPhone.Text = ""
-        TxtRAddress.Text = ""
-        TxtRObservations.Text = ""
+        Clean()
         BtnSave.Enabled = True
         BtnEdit.Enabled = True
         BtnCancel.Enabled = True
         PnlData.Visible = False
+    End Sub
+
+    Private Sub Clean()
+        TxtRId.Clear()
+        TxtRName.Clear()
+        TxtRPhone.Clear()
+        TxtRAddress.Clear()
+        TxtRObservations.Clear()
+        TxtRId.Focus()
     End Sub
 
     'When the drag is false the panel is stop
