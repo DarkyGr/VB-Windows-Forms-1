@@ -310,6 +310,7 @@ Partial Class FormReader
         '
         'PnlSide
         '
+        Me.PnlSide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PnlSide.Controls.Add(Me.BtnAdd)
         Me.PnlSide.Dock = System.Windows.Forms.DockStyle.Right
         Me.PnlSide.Location = New System.Drawing.Point(851, 0)
