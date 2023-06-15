@@ -301,9 +301,9 @@ Partial Class FormReader
         Me.DGReaders.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DGReaders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGReaders.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGReaders.EnableHeadersVisualStyles = False
         Me.DGReaders.Location = New System.Drawing.Point(0, 0)
         Me.DGReaders.Name = "DGReaders"
+        Me.DGReaders.ReadOnly = True
         Me.DGReaders.RowHeadersVisible = False
         Me.DGReaders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGReaders.Size = New System.Drawing.Size(851, 537)
