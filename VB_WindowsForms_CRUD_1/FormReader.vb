@@ -100,6 +100,7 @@ Public Class FormReader
         TxtRId.Focus()
     End Sub
 
+    'Show Readers Method
     Sub Show()
         Dim dt As New DataTable
         Dim da As New SqlDataAdapter
@@ -119,6 +120,13 @@ Public Class FormReader
             DGReaders.Columns(3).Width = 250
             DGReaders.Columns(4).Width = 250
 
+            'Change header appearance
+            DGReaders.EnableHeadersVisualStyles = False
+            Dim style As DataGridViewCellStyle = New DataGridViewCellStyle()
+            style.BackColor = Color.White
+            style.ForeColor = Color.Black
+            style.Font = New Font("Segoe UI", 10, FontStyle.Regular Or FontStyle.Bold)
+            DGReaders.ColumnHeadersDefaultCellStyle = style
 
         Catch ex As Exception
 
