@@ -9,11 +9,6 @@ Public Class FormReader
         'MsgBox("The connection is successful", vbOKOnly + vbInformation, "Reader's System")
     End Sub
 
-    'Close Button
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        Close()
-    End Sub
-
     'Variables to the position of the mouse and drag the window
     Dim ex, ey As Integer
     Dim drag As Boolean
@@ -31,6 +26,16 @@ Public Class FormReader
             Me.Location = Me.PointToScreen(New Point(FormReader.MousePosition.X - Me.Location.X - ex,
                                                      FormReader.MousePosition.Y - Me.Location.Y - ey))
         End If
+    End Sub
+
+    'When the drag is false the panel is stop
+    Private Sub PnlTitle_MouseUp(sender As Object, e As MouseEventArgs) Handles PnlTitle.MouseUp
+        drag = False
+    End Sub
+
+    'Close Button
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        Close()
     End Sub
 
     'Add Button
@@ -93,11 +98,6 @@ Public Class FormReader
         TxtRAddress.Clear()
         TxtRObservations.Clear()
         TxtRId.Focus()
-    End Sub
-
-    'When the drag is false the panel is stop
-    Private Sub PnlTitle_MouseUp(sender As Object, e As MouseEventArgs) Handles PnlTitle.MouseUp
-        drag = False
     End Sub
 
     Sub Show()
