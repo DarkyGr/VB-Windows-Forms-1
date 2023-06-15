@@ -24,7 +24,7 @@ Public Class FormReader
         drag = True
     End Sub
 
-    'Calculate the position for the panel
+    'Calculate and drag the position for the panel
     Private Sub PnlTitle_MouseMove(sender As Object, e As MouseEventArgs) Handles PnlTitle.MouseMove
         If drag Then
             Me.Location = Me.PointToScreen(New Point(FormReader.MousePosition.X - Me.Location.X - ex,
@@ -40,6 +40,39 @@ Public Class FormReader
         BtnEdit.BackColor = Color.Gray
         BtnCancel.Enabled = True
         TxtRId.Focus()
+    End Sub
+
+    'Save Button
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        Dim cmd As New SqlCommand
+
+        'If it's different to void
+        If TxtRName.Text <> "" And TxtRId.Text <> "" Then
+            Try
+                OpenConnection()
+                cmd = New SqlCommand("sp_CreateReader", connection)
+                cmd.CommandType = 4
+
+                cmd.Parameters.AddWithValue("@readerId", TxtRId.Text.ToString)
+                cmd.Parameters.AddWithValue("@readerName", TxtRName.Text.ToString)
+                cmd.Parameters.AddWithValue("@readerPhone", TxtRPhone.Text)
+                cmd.Parameters.AddWithValue("@readerAddress", TxtRAddress.Text.ToString)
+                cmd.Parameters.AddWithValue("@readerObservations", TxtRObservations.Text.ToString)
+                cmd.ExecuteNonQuery()
+
+                CloseConnection()
+
+                PnlData.Visible = False
+
+                Clean()
+
+            Catch ex As Exception
+
+            End Try
+        Else
+            MsgBox("The Reader ID and Name fields are required", vbInformation + vbOKOnly, "Warning")
+
+        End If
     End Sub
 
     'Cancel Button
