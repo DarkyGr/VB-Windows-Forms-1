@@ -112,6 +112,14 @@ Public Class FormReader
             DGReaders.DataSource = dt
             CloseConnection()
 
+            'Change width colums
+            DGReaders.Columns(0).Width = 80
+            DGReaders.Columns(1).Width = 150
+            DGReaders.Columns(2).Width = 100
+            DGReaders.Columns(3).Width = 250
+            DGReaders.Columns(4).Width = 250
+
+
         Catch ex As Exception
 
         End Try
