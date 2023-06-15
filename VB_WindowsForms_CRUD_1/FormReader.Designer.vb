@@ -135,6 +135,7 @@ Partial Class FormReader
         '
         'PnlData
         '
+        Me.PnlData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PnlData.Controls.Add(Me.BtnCancel)
         Me.PnlData.Controls.Add(Me.BtnEdit)
         Me.PnlData.Controls.Add(Me.BtnSave)
