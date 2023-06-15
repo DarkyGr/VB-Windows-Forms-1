@@ -5,6 +5,7 @@ Public Class FormReader
     'Load Data to Form
     Private Sub FormReader_Load(sender As Object, e As EventArgs) Handles Me.Load
         OpenConnection()
+        Show()
         'MsgBox("The connection is successful", vbOKOnly + vbInformation, "Reader's System")
     End Sub
 
@@ -61,10 +62,10 @@ Public Class FormReader
                 cmd.ExecuteNonQuery()
 
                 CloseConnection()
-
                 PnlData.Visible = False
-
                 Clean()
+                Show()
+
 
             Catch ex As Exception
 
@@ -97,5 +98,23 @@ Public Class FormReader
     'When the drag is false the panel is stop
     Private Sub PnlTitle_MouseUp(sender As Object, e As MouseEventArgs) Handles PnlTitle.MouseUp
         drag = False
+    End Sub
+
+    Sub Show()
+        Dim dt As New DataTable
+        Dim da As New SqlDataAdapter
+
+        Try
+            OpenConnection()
+            da = New SqlDataAdapter("sp_ShowReader", connection)
+
+            da.Fill(dt)
+            DGReaders.DataSource = dt
+            CloseConnection()
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class
