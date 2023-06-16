@@ -45,9 +45,9 @@ Partial Class FormReader
         Me.TxtRId = New System.Windows.Forms.TextBox()
         Me.lblRId = New System.Windows.Forms.Label()
         Me.DGReaders = New System.Windows.Forms.DataGridView()
+        Me.Delete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PnlSide = New System.Windows.Forms.Panel()
         Me.BtnAdd = New System.Windows.Forms.PictureBox()
-        Me.Delete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PnlTitle.SuspendLayout()
         Me.PnlSearch.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,6 +311,14 @@ Partial Class FormReader
         Me.DGReaders.Size = New System.Drawing.Size(851, 537)
         Me.DGReaders.TabIndex = 1
         '
+        'Delete
+        '
+        Me.Delete.HeaderText = ""
+        Me.Delete.Image = CType(resources.GetObject("Delete.Image"), System.Drawing.Image)
+        Me.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Delete.Name = "Delete"
+        Me.Delete.ReadOnly = True
+        '
         'PnlSide
         '
         Me.PnlSide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -331,14 +339,6 @@ Partial Class FormReader
         Me.BtnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.BtnAdd.TabIndex = 0
         Me.BtnAdd.TabStop = False
-        '
-        'Delete
-        '
-        Me.Delete.HeaderText = ""
-        Me.Delete.Image = CType(resources.GetObject("Delete.Image"), System.Drawing.Image)
-        Me.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.Delete.Name = "Delete"
-        Me.Delete.ReadOnly = True
         '
         'FormReader
         '

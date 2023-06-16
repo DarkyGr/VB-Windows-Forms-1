@@ -42,9 +42,12 @@ Public Class FormReader
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
         PnlData.Visible = True
         BtnSave.Enabled = True
+        BtnSave.BackColor = Color.LimeGreen
         BtnEdit.Enabled = False
         BtnEdit.BackColor = Color.Gray
         BtnCancel.Enabled = True
+        TxtRId.Enabled = True
+        TxtRId.BackColor = Color.White
         TxtRId.Focus()
     End Sub
 
@@ -114,11 +117,12 @@ Public Class FormReader
             CloseConnection()
 
             'Change width colums
-            DGReaders.Columns(0).Width = 80
-            DGReaders.Columns(1).Width = 150
-            DGReaders.Columns(2).Width = 100
-            DGReaders.Columns(3).Width = 250
+            DGReaders.Columns(0).Width = 35
+            DGReaders.Columns(1).Width = 80
+            DGReaders.Columns(2).Width = 150
+            DGReaders.Columns(3).Width = 100
             DGReaders.Columns(4).Width = 250
+            DGReaders.Columns(5).Width = 250
 
             'Change header appearance
             DGReaders.EnableHeadersVisualStyles = False
@@ -157,11 +161,12 @@ Public Class FormReader
             CloseConnection()
 
             'Change width colums
-            DGReaders.Columns(0).Width = 80
-            DGReaders.Columns(1).Width = 150
-            DGReaders.Columns(2).Width = 100
-            DGReaders.Columns(3).Width = 250
+            DGReaders.Columns(0).Width = 35
+            DGReaders.Columns(1).Width = 80
+            DGReaders.Columns(2).Width = 150
+            DGReaders.Columns(3).Width = 100
             DGReaders.Columns(4).Width = 250
+            DGReaders.Columns(5).Width = 250
 
             'Change header appearance
             DGReaders.EnableHeadersVisualStyles = False
@@ -176,6 +181,7 @@ Public Class FormReader
         End Try
     End Sub
 
+    'Update Button
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
         Dim cmd As New SqlCommand
 
@@ -207,15 +213,16 @@ Public Class FormReader
         End If
     End Sub
 
+    'Update Reader - Double Click on the Data Grid View Readers
     Private Sub DGReaders_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGReaders.CellContentDoubleClick
         PnlData.Visible = True
 
         Try
-            TxtRId.Text = DGReaders.SelectedCells.Item(0).Value
-            TxtRName.Text = DGReaders.SelectedCells.Item(1).Value
-            TxtRPhone.Text = DGReaders.SelectedCells.Item(2).Value
-            TxtRAddress.Text = DGReaders.SelectedCells.Item(3).Value
-            TxtRObservations.Text = DGReaders.SelectedCells.Item(4).Value
+            TxtRId.Text = DGReaders.SelectedCells.Item(1).Value
+            TxtRName.Text = DGReaders.SelectedCells.Item(2).Value
+            TxtRPhone.Text = DGReaders.SelectedCells.Item(3).Value
+            TxtRAddress.Text = DGReaders.SelectedCells.Item(4).Value
+            TxtRObservations.Text = DGReaders.SelectedCells.Item(5).Value
 
             TxtRId.Enabled = False
             TxtRId.BackColor = Color.LightGray
@@ -223,9 +230,39 @@ Public Class FormReader
             BtnSave.Enabled = False
             BtnSave.BackColor = Color.Gray
             BtnEdit.Enabled = True
+            BtnEdit.BackColor = Color.Orange
         Catch ex As Exception
 
         End Try
 
+    End Sub
+
+    'Delete Reader - Once Click
+    Private Sub DGReaders_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGReaders.CellContentClick
+        If e.ColumnIndex = DGReaders.Columns.Item("Delete").Index Then
+            Dim result As DialogResult
+            result = MsgBox("Are you sure to delete this reader?", vbQuestion + vbOKCancel, "Delete Reader")
+
+            If result = DialogResult.OK Then
+                Dim cmd As SqlCommand
+
+                Try
+                    OpenConnection()
+                    cmd = New SqlCommand("sp_DeleteReader", connection)
+                    cmd.CommandType = 4
+                    cmd.Parameters.AddWithValue("@readerId", DGReaders.SelectedCells.Item(1).Value)
+
+                    cmd.ExecuteNonQuery()
+                    CloseConnection()
+                    Show()
+
+                Catch ex As Exception
+
+                End Try
+
+            Else
+                MsgBox("Deletion canceled", vbInformation + vbOKOnly, "Warning")
+            End If
+        End If
     End Sub
 End Class
