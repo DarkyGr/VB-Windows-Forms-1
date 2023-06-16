@@ -131,6 +131,47 @@ Public Class FormReader
         Catch ex As Exception
 
         End Try
-
     End Sub
+
+    Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
+        Search()
+    End Sub
+
+    'Search Method (Only reader ID and Name)
+    Sub Search()
+        Dim dt As New DataTable
+        Dim da As New SqlDataAdapter
+
+        Try
+            OpenConnection()
+            da = New SqlDataAdapter("sp_SearchReader", connection)
+
+            'Adding commnad type and parameters
+            da.SelectCommand.CommandType = 4 'The 4 is because variables are being used
+            da.SelectCommand.Parameters.AddWithValue("@Search", TxtSearch.Text)
+
+            da.Fill(dt)
+            DGReaders.DataSource = dt
+            CloseConnection()
+
+            'Change width colums
+            DGReaders.Columns(0).Width = 80
+            DGReaders.Columns(1).Width = 150
+            DGReaders.Columns(2).Width = 100
+            DGReaders.Columns(3).Width = 250
+            DGReaders.Columns(4).Width = 250
+
+            'Change header appearance
+            DGReaders.EnableHeadersVisualStyles = False
+            Dim style As DataGridViewCellStyle = New DataGridViewCellStyle()
+            style.BackColor = Color.White
+            style.ForeColor = Color.Black
+            style.Font = New Font("Segoe UI", 10, FontStyle.Regular Or FontStyle.Bold)
+            DGReaders.ColumnHeadersDefaultCellStyle = style
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class
