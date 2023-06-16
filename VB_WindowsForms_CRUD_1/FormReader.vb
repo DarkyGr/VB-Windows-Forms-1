@@ -133,6 +133,7 @@ Public Class FormReader
         End Try
     End Sub
 
+    'Text Search
     Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
         Search()
     End Sub
@@ -174,4 +175,53 @@ Public Class FormReader
         End Try
     End Sub
 
+    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
+        Dim cmd As New SqlCommand
+
+        'If it's different to void
+        If TxtRName.Text <> "" And TxtRId.Text <> "" Then
+            Try
+                OpenConnection()
+                cmd = New SqlCommand("sp_UpdateReader", connection)
+                cmd.CommandType = 4
+
+                cmd.Parameters.AddWithValue("@readerId", TxtRId.Text.ToString)
+                cmd.Parameters.AddWithValue("@readerName", TxtRName.Text.ToString)
+                cmd.Parameters.AddWithValue("@readerPhone", TxtRPhone.Text)
+                cmd.Parameters.AddWithValue("@readerAddress", TxtRAddress.Text.ToString)
+                cmd.Parameters.AddWithValue("@readerObservations", TxtRObservations.Text.ToString)
+                cmd.ExecuteNonQuery()
+
+                CloseConnection()
+                PnlData.Visible = False
+                Clean()
+                Show()
+
+            Catch ex As Exception
+
+            End Try
+        Else
+            MsgBox("The Reader ID and Name fields are required", vbInformation + vbOKOnly, "Warning")
+
+        End If
+    End Sub
+
+    Private Sub DGReaders_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGReaders.CellContentDoubleClick
+        PnlData.Visible = True
+
+        Try
+            TxtRId.Text = DGReaders.SelectedCells.Item(0).Value
+            TxtRName.Text = DGReaders.SelectedCells.Item(1).Value
+            TxtRPhone.Text = DGReaders.SelectedCells.Item(2).Value
+            TxtRAddress.Text = DGReaders.SelectedCells.Item(3).Value
+            TxtRObservations.Text = DGReaders.SelectedCells.Item(4).Value
+
+            BtnSave.Enabled = False
+            BtnSave.BackColor = Color.Gray
+            BtnEdit.Enabled = True
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class
