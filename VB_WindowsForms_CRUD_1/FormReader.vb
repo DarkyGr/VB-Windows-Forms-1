@@ -116,21 +116,7 @@ Public Class FormReader
             DGReaders.DataSource = dt
             CloseConnection()
 
-            'Change width colums
-            DGReaders.Columns(0).Width = 35
-            DGReaders.Columns(1).Width = 80
-            DGReaders.Columns(2).Width = 150
-            DGReaders.Columns(3).Width = 100
-            DGReaders.Columns(4).Width = 250
-            DGReaders.Columns(5).Width = 250
-
-            'Change header appearance
-            DGReaders.EnableHeadersVisualStyles = False
-            Dim style As DataGridViewCellStyle = New DataGridViewCellStyle()
-            style.BackColor = Color.White
-            style.ForeColor = Color.Black
-            style.Font = New Font("Segoe UI", 10, FontStyle.Regular Or FontStyle.Bold)
-            DGReaders.ColumnHeadersDefaultCellStyle = style
+            customizingDGReaders()
 
         Catch ex As Exception
 
@@ -160,21 +146,7 @@ Public Class FormReader
             DGReaders.DataSource = dt
             CloseConnection()
 
-            'Change width colums
-            DGReaders.Columns(0).Width = 35
-            DGReaders.Columns(1).Width = 80
-            DGReaders.Columns(2).Width = 150
-            DGReaders.Columns(3).Width = 100
-            DGReaders.Columns(4).Width = 250
-            DGReaders.Columns(5).Width = 250
-
-            'Change header appearance
-            DGReaders.EnableHeadersVisualStyles = False
-            Dim style As DataGridViewCellStyle = New DataGridViewCellStyle()
-            style.BackColor = Color.White
-            style.ForeColor = Color.Black
-            style.Font = New Font("Segoe UI", 10, FontStyle.Regular Or FontStyle.Bold)
-            DGReaders.ColumnHeadersDefaultCellStyle = style
+            customizingDGReaders()
 
         Catch ex As Exception
 
@@ -264,5 +236,29 @@ Public Class FormReader
                 MsgBox("Deletion canceled", vbInformation + vbOKOnly, "Warning")
             End If
         End If
+    End Sub
+
+    'Customizing the data grid view readers
+    Sub customizingDGReaders()
+        'Change heigth to all rows
+        For i = 0 To DGReaders.Rows.Count - 1
+            DGReaders.Rows(i).Height = 45
+        Next
+
+        'Change width colums
+        DGReaders.Columns(0).Width = 35
+        DGReaders.Columns(1).Width = 80
+        DGReaders.Columns(2).Width = 150
+        DGReaders.Columns(3).Width = 100
+        DGReaders.Columns(4).Width = 250
+        DGReaders.Columns(5).Width = 250
+
+        'Change header appearance
+        DGReaders.EnableHeadersVisualStyles = False
+        Dim style As DataGridViewCellStyle = New DataGridViewCellStyle()
+        style.BackColor = Color.White
+        style.ForeColor = Color.Black
+        style.Font = New Font("Segoe UI", 10, FontStyle.Regular Or FontStyle.Bold)
+        DGReaders.ColumnHeadersDefaultCellStyle = style
     End Sub
 End Class
