@@ -47,6 +47,7 @@ Partial Class FormReader
         Me.DGReaders = New System.Windows.Forms.DataGridView()
         Me.PnlSide = New System.Windows.Forms.Panel()
         Me.BtnAdd = New System.Windows.Forms.PictureBox()
+        Me.Delete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PnlTitle.SuspendLayout()
         Me.PnlSearch.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -300,6 +301,7 @@ Partial Class FormReader
         Me.DGReaders.BackgroundColor = System.Drawing.Color.White
         Me.DGReaders.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DGReaders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGReaders.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Delete})
         Me.DGReaders.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGReaders.Location = New System.Drawing.Point(0, 0)
         Me.DGReaders.Name = "DGReaders"
@@ -329,6 +331,14 @@ Partial Class FormReader
         Me.BtnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.BtnAdd.TabIndex = 0
         Me.BtnAdd.TabStop = False
+        '
+        'Delete
+        '
+        Me.Delete.HeaderText = ""
+        Me.Delete.Image = CType(resources.GetObject("Delete.Image"), System.Drawing.Image)
+        Me.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Delete.Name = "Delete"
+        Me.Delete.ReadOnly = True
         '
         'FormReader
         '
@@ -381,4 +391,5 @@ Partial Class FormReader
     Friend WithEvents BtnEdit As Button
     Friend WithEvents BtnSave As Button
     Friend WithEvents BtnCancel As Button
+    Friend WithEvents Delete As DataGridViewImageColumn
 End Class
