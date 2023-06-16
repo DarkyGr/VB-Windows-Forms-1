@@ -136,6 +136,7 @@ Public Class FormReader
     'Text Search
     Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
         Search()
+        PnlData.Visible = False
     End Sub
 
     'Search Method (Only reader ID and Name)
