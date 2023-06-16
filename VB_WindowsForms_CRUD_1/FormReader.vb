@@ -201,7 +201,7 @@ Public Class FormReader
 
             End Try
         Else
-            MsgBox("The Reader ID and Name fields are required", vbInformation + vbOKOnly, "Warning")
+            MsgBox("The Reader Name field is required and the Phone field it only takes numbers", vbInformation + vbOKOnly, "Warning")
 
         End If
     End Sub
@@ -215,6 +215,9 @@ Public Class FormReader
             TxtRPhone.Text = DGReaders.SelectedCells.Item(2).Value
             TxtRAddress.Text = DGReaders.SelectedCells.Item(3).Value
             TxtRObservations.Text = DGReaders.SelectedCells.Item(4).Value
+
+            TxtRId.Enabled = False
+            TxtRId.BackColor = Color.LightGray
 
             BtnSave.Enabled = False
             BtnSave.BackColor = Color.Gray
